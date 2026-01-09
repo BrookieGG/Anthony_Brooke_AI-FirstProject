@@ -1,10 +1,13 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
-
+using UnityEngine;
 
 namespace NodeCanvas.Tasks.Conditions {
 
 	public class ColourCT : ConditionTask {
+		public float waitTime;
+
+		public float timeWaiting = 0f;
 
 		//Use for initialization. This is called only once in the lifetime of the task.
 		//Return null if init was successfull. Return an error string otherwise
@@ -14,7 +17,7 @@ namespace NodeCanvas.Tasks.Conditions {
 
 		//Called whenever the condition gets enabled.
 		protected override void OnEnable() {
-			
+			timeWaiting = 0f;
 		}
 
 		//Called whenever the condition gets disabled.
@@ -25,7 +28,12 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Called once per frame while the condition is active.
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
-			return true;
+
+			timeWaiting += Time.deltaTime;
+
+			bool hasWaitedLongEnough = timeWaiting >= waitTime;
+
+			return hasWaitedLongEnough;
 		}
 	}
 }
