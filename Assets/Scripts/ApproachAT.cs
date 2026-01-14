@@ -11,14 +11,14 @@ namespace NodeCanvas.Tasks.Actions
 
         public Transform targetTransform;
 
-        public float speed;
+        public BBParameter<float> speed;
 
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit()
         {
-            Blackboard agentBlackboard = agent.GetComponent<Blackboard>();
-            speed = agentBlackboard.GetVariableValue<float>("speed");
+            //Blackboard agentBlackboard = agent.GetComponent<Blackboard>();
+            //speed = agentBlackboard.GetVariableValue<float>("speed");
 
             //agentBlackboard.SetVariableValue("speed", 0f);
 
@@ -40,9 +40,14 @@ namespace NodeCanvas.Tasks.Actions
 
             Vector3 directionToMove = targetTransform.position - agent.transform.position;
 
-            agent.transform.position += directionToMove.normalized * speed * Time.deltaTime;
+            agent.transform.position += directionToMove.normalized * speed.value * Time.deltaTime;
 
+            float distanceToTarget = directionToMove.magnitude;
 
+            if (distanceToTarget < 0.5)
+            {
+                EndAction(true);
+            }
         }
 
         //Called when the task is disabled.
