@@ -7,9 +7,10 @@ namespace NodeCanvas.Tasks.Actions {
 
 	public class IncreaseOdorAT : ActionTask {
 
-        public BBParameter<GameObject> otherObject;
-		public float odorLevel;
+		//public BBParameter<float> odorLevel;
+		public BBParameter<GameObject> otherObject;
         public float rateOfChange;
+
 
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
@@ -21,15 +22,19 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-            Blackboard otherBlackboard = otherObject.value.GetComponent<Blackboard>();
-            float odorLevel = otherBlackboard.GetVariableValue<float>("odorLevel");
-
-            EndAction(true);
+          
+            //EndAction(true);
 		}
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
+            Blackboard otherBlackboard = otherObject.value.GetComponent<Blackboard>();
+            float odorLevel = otherBlackboard.GetVariableValue<float>("odorLevel");
+			Debug.Log(odorLevel);
+
             odorLevel += rateOfChange * Time.deltaTime;
+
+			otherBlackboard.SetVariableValue("odorLevel", odorLevel);
         }
 
 		//Called when the task is disabled.
