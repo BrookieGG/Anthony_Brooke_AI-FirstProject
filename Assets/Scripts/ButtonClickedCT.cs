@@ -7,12 +7,12 @@ namespace NodeCanvas.Tasks.Conditions {
 	public class ButtonClickedCT : ConditionTask {
 
         [RequiredField]
-        public BBParameter<UnityEngine.UI.Button> button;
+        public BBParameter<UnityEngine.UI.Button> button; //assign button in blackboard
 
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit(){
-            button.value.onClick.AddListener(OnClick);
+            button.value.onClick.AddListener(OnClick); //gets the button
             return null;
 		}
 

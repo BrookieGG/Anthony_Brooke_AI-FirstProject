@@ -7,9 +7,9 @@ namespace NodeCanvas.Tasks.Actions {
 
 	public class SetValueAT : ActionTask {
 
-		public BBParameter<GameObject> otherObject;
-		public string varName;
-		public float newValue;
+		public BBParameter<GameObject> otherObject; //references a gameobject with the blackboard on it
+		public string varName; //name of the variable that will be modified
+		public float newValue; //new value that will be assigned 
         
 
 
@@ -24,9 +24,9 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
 
-            Blackboard otherBlackboard = agent.GetComponent<Blackboard>();
-            otherBlackboard.SetVariableValue(varName, newValue);
-            Debug.Log(otherBlackboard.GetVariableValue<float>(varName));
+            Blackboard otherBlackboard = agent.GetComponent<Blackboard>(); //gets blackboard
+            otherBlackboard.SetVariableValue(varName, newValue); //sets the variable in the blackboard to the new value
+            Debug.Log(otherBlackboard.GetVariableValue<float>(varName)); //debug log test to see if it is set to the new value
 
             EndAction(true);
         }
