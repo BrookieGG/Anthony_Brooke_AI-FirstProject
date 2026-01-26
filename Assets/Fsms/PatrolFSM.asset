@@ -12,18 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
   m_Name: PatrolFSM
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"targetTransform":1,"speed":{"_name":"speed","_targetVariableID":"ce753feb-edd1-41de-8078-5a3441fd43ae"},"$type":"NodeCanvas.Tasks.Actions.ApproachAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Approach","_position":{"x":280.0,"y":246.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"targetTransform":2,"speed":{"_name":"speed","_targetVariableID":"ce753feb-edd1-41de-8078-5a3441fd43ae"},"$type":"NodeCanvas.Tasks.Actions.ApproachAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Toil","_position":{"x":410.0,"y":135.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"actions":[{"targetTransform":3,"speed":{"_name":"speed","_targetVariableID":"ce753feb-edd1-41de-8078-5a3441fd43ae"},"$type":"NodeCanvas.Tasks.Actions.ApproachAT"},{"otherObject":{"_value":4},"rateOfChange":-10.0,"$type":"NodeCanvas.Tasks.Actions.IncreaseOdorAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Clean","_position":{"x":510.0,"y":326.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"2"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"odorLevel":{"_name":"odorLevel","_targetVariableID":"68573de5-c4bb-4319-a7a5-8cdf8f873d1c"},"maxOdor":{"_name":"maxOdor","_targetVariableID":"addbe922-b074-4e16-9963-930ab7c56d56"},"$type":"NodeCanvas.Tasks.Conditions.IsOdorMaxCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"odorLevel":{"_name":"odorLevel","_targetVariableID":"68573de5-c4bb-4319-a7a5-8cdf8f873d1c"},"maxOdor":{"_name":"maxOdor","_targetVariableID":"addbe922-b074-4e16-9963-930ab7c56d56"},"$type":"NodeCanvas.Tasks.Conditions.IsOdorMaxCT"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"currentValue":{"_name":"odorLevel","_targetVariableID":"68573de5-c4bb-4319-a7a5-8cdf8f873d1c"},"threshold":1.0,"$type":"NodeCanvas.Tasks.Conditions.UnderValueCT"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
-  _objectReferences:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"speed":{"_name":"speed","_targetVariableID":"ce753feb-edd1-41de-8078-5a3441fd43ae"},"targetTransform":{"_name":"path1","_targetVariableID":"86065b23-381b-4c1b-972f-23ce52cdb081"},"$type":"NodeCanvas.Tasks.Actions.ApproachAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Approach","_position":{"x":280.0,"y":246.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"speed":{"_name":"speed","_targetVariableID":"ce753feb-edd1-41de-8078-5a3441fd43ae"},"targetTransform":{"_name":"path2","_targetVariableID":"4aefe5a1-d12b-4fe0-a082-8e667a54be71"},"$type":"NodeCanvas.Tasks.Actions.ApproachAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Toil","_position":{"x":410.0,"y":135.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _objectReferences: []
   _graphSource:
     _version: 3.33
     _category: 
     _comments: 
-    _translation: {x: 0, y: 0}
-    _zoomFactor: 1
+    _translation: {x: 276.17792, y: 26.714897}
+    _zoomFactor: 0.92436004
   _haltSerialization: 0
   _externalSerializationFile: {fileID: 0}

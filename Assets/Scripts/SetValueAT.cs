@@ -5,11 +5,12 @@ using UnityEngine;
 
 namespace NodeCanvas.Tasks.Actions {
 
-	public class IncreaseOdorAT : ActionTask {
+	public class SetValueAT : ActionTask {
 
-		//public BBParameter<float> odorLevel;
 		public BBParameter<GameObject> otherObject;
-        public float rateOfChange;
+		public string varName;
+		public float newValue;
+        
 
 
         //Use for initialization. This is called only once in the lifetime of the task.
@@ -22,19 +23,17 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-          
-            //EndAction(true);
-		}
+
+            Blackboard otherBlackboard = agent.GetComponent<Blackboard>();
+            otherBlackboard.SetVariableValue(varName, newValue);
+            Debug.Log(otherBlackboard.GetVariableValue<float>(varName));
+
+            EndAction(true);
+        }
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-            Blackboard otherBlackboard = otherObject.value.GetComponent<Blackboard>();
-            float odorLevel = otherBlackboard.GetVariableValue<float>("odorLevel");
-			//Debug.Log(odorLevel);
 
-            odorLevel += rateOfChange * Time.deltaTime;
-
-			otherBlackboard.SetVariableValue("odorLevel", odorLevel);
         }
 
 		//Called when the task is disabled.

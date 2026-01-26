@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
   m_Name: EmergencyCleanFSM
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
-  _objectReferences: []
+  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"otherObject":{"_name":"robot","_targetVariableID":"959d2cd5-fb47-4b50-b00e-b39666c012f6"},"varName":"speed","newValue":5.0,"$type":"NodeCanvas.Tasks.Actions.SetValueAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Speed","_position":{"x":305.0,"y":194.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"actions":[{"speed":{"_name":"speed","_targetVariableID":"ce753feb-edd1-41de-8078-5a3441fd43ae"},"targetTransform":{"_name":"clean","_targetVariableID":"140085e7-3563-4248-af9d-7dc07c1ed1e6"},"$type":"NodeCanvas.Tasks.Actions.ApproachAT"},{"otherObject":{"_value":1},"rateOfChange":-10.0,"$type":"NodeCanvas.Tasks.Actions.IncreaseOdorAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Clean","_position":{"x":483.0,"y":247.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"otherObject":{"_name":"robot","_targetVariableID":"959d2cd5-fb47-4b50-b00e-b39666c012f6"},"varName":"speed","newValue":2.0,"$type":"NodeCanvas.Tasks.Actions.SetValueAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Reset","_position":{"x":665.0,"y":381.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"2"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"currentValue":{"_name":"odorLevel","_targetVariableID":"68573de5-c4bb-4319-a7a5-8cdf8f873d1c"},"threshold":0.01,"$type":"NodeCanvas.Tasks.Conditions.UnderValueCT"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 0}
   _graphSource:
     _version: 3.33
     _category: 

@@ -9,9 +9,8 @@ namespace NodeCanvas.Tasks.Actions
     public class ApproachAT : ActionTask
     {
 
-        public Transform targetTransform;
-
         public BBParameter<float> speed;
+        public BBParameter<Transform> targetTransform;
 
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
@@ -38,7 +37,7 @@ namespace NodeCanvas.Tasks.Actions
         {
             //Move the object towards the target Transform
 
-            Vector3 directionToMove = targetTransform.position - agent.transform.position;
+            Vector3 directionToMove = targetTransform.value.position - agent.transform.position;
 
             agent.transform.position += directionToMove.normalized * speed.value * Time.deltaTime;
 

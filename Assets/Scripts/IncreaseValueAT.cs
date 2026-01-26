@@ -8,16 +8,16 @@ namespace NodeCanvas.Tasks.Actions {
 	public class IncreaseValueAT : ActionTask {
 
 		//private float currentValue;
-		//private Blackboard agentBlackboard;
+		private Blackboard agentBlackboard;
 
 		public BBParameter<float> currentValue;
-		//public string variableName;
-		public float rateOfChange;
+		public string variableName;
+		public float value;
 
 		//Use for initialization. This is called only once in the lifetime of the task.
 		//Return null if init was successfull. Return an error string otherwise
 		protected override string OnInit() {
-            //agentBlackboard = agent.GetComponent<Blackboard>();
+            agentBlackboard = agent.GetComponent<Blackboard>();
 			
 
 			return null;
@@ -33,8 +33,8 @@ namespace NodeCanvas.Tasks.Actions {
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
             //alue = agentBlackboard.GetVariableValue<float>(variableName);
-            currentValue.value += rateOfChange * Time.deltaTime;
-			//agentBlackboard.SetVariableValue(variableName, value);
+            //currentValue.value += rateOfChange * Time.deltaTime;
+			agentBlackboard.SetVariableValue(variableName, value);
 		}
 
 		//Called when the task is disabled.
