@@ -39,7 +39,16 @@ namespace NodeCanvas.Tasks.Actions
 
             Vector3 directionToMove = targetTransform.value.position - agent.transform.position;
 
+            if (directionToMove.sqrMagnitude < 0.0001f)
+            {
+                EndAction(true);
+                return;
+            }
+
             agent.transform.position += directionToMove.normalized * speed.value * Time.deltaTime;
+
+            Quaternion targetRotation = Quaternion.LookRotation(directionToMove);
+            agent.transform.rotation = Quaternion.RotateTowards(agent.transform.rotation, targetRotation, 720f * Time.deltaTime);
 
             float distanceToTarget = directionToMove.magnitude;
 
