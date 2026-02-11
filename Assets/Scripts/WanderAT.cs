@@ -10,11 +10,11 @@ namespace NodeCanvas.Tasks.Actions
 	public class WanderAT : ActionTask
 	{
 
-		public float wanderDist = 8f;
+		public float wanderDist = 6f;
 		public float wanderRadius = 5f;
 		//public BBParameter<float> wanderDist = 10f;
 		//public BBParameter<float> wanderRadius = 5f;
-		public BBParameter<float> sampleMaxDist = 10f;
+		public BBParameter<float> sampleMaxDist = 4f;
 
 		private NavMeshAgent navAgent;
 
@@ -103,10 +103,15 @@ namespace NodeCanvas.Tasks.Actions
 
 			NavMeshHit hit;
 
-			if (NavMesh.SamplePosition(destination, out hit, sampleMaxDist.value, NavMesh.AllAreas))
+            for (int i = 0; i < 20; i++)
 			{
-				navAgent.SetDestination(hit.position);
-			}
+                Vector3 randomOffset = Random.insideUnitCircle * wanderRadius;
+
+                if (NavMesh.SamplePosition(destination, out hit, sampleMaxDist.value, NavMesh.AllAreas))
+                {
+                    navAgent.SetDestination(hit.position);
+                }
+            }
 		}
 	}
 }
