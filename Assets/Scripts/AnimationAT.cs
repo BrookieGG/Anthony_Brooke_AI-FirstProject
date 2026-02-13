@@ -8,7 +8,10 @@ namespace NodeCanvas.Tasks.Actions {
 	public class AnimationAT : ActionTask {
 
 		private Animator animator;
-		public string animationBool;
+
+		public string animationTrigger;
+		public string animationIndex;
+		public int animationState;
         public string prereqState;
 
         //Use for initialization. This is called only once in the lifetime of the task.
@@ -31,9 +34,10 @@ namespace NodeCanvas.Tasks.Actions {
 
 			while (check)
 			{
-				if (!isAnimationPlaying(prereqState))
+				if (!isAnimationPlaying(prereqState) || prereqState == null)
 				{
-					animator.SetBool(animationBool, true);
+					animator.SetInteger(animationIndex, animationState);
+					animator.SetTrigger(animationTrigger);
 					check = false;
                     EndAction(true);
                 }
