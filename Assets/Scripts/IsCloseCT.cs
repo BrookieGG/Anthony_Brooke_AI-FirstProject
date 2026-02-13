@@ -1,5 +1,7 @@
 using NodeCanvas.Framework;
+using NodeCanvas.Tasks.Actions;
 using ParadoxNotion.Design;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -7,14 +9,19 @@ namespace NodeCanvas.Tasks.Conditions {
 
 	public class IsCloseCT : ConditionTask {
 
-		public BBParameter<GameObject> target;
+		private GameObject[] targets;
 
 		public BBParameter<float> detectionRadius = 5f;
+
+		public BBParameter<string> targetTag;
 
 
 		//Use for initialization. This is called only once in the lifetime of the task.
 		//Return null if init was successfull. Return an error string otherwise
 		protected override string OnInit(){
+
+			targets = GameObject.FindGameObjectsWithTag(targetTag.value);
+
 			return null;
 		}
 
@@ -32,13 +39,18 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
 
-			if(target.value  != null)
+			foreach (GameObject target in targets)
 			{
-				return false;
-			}
+                float distance = Vector3.Distance(agent.transform.position, target.transform.position);
 
-			float distance = Vector3.Distance(agent.transform.position, target.value.transform.position);
-			return distance <= detectionRadius.value;
+                if (distance <= detectionRadius.value)
+                {
+                    return true;
+                }
+
+              
+            }
+			return false;
 		}
 	}
 }
