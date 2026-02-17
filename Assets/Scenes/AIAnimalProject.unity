@@ -1249,7 +1249,7 @@ GameObject:
   - component: {fileID: 1632083567}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1342,7 +1342,8 @@ Transform:
   m_LocalPosition: {x: 12.55, y: 0.03, z: 11.77}
   m_LocalScale: {x: 7.9471188, y: -0.13, z: 7.9471188}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1721435667}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1632083567
@@ -1365,6 +1366,37 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!1 &1721435666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1721435667}
+  m_Layer: 0
+  m_Name: Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1721435667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721435666}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.582, y: 0.66, z: -0.204}
+  m_LocalScale: {x: 0.12583177, y: -7.6923075, z: 0.12583177}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1632083566}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1853866712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1714,12 +1746,15 @@ MonoBehaviour:
   _serializedBlackboard: '{"_variables":{"speed":{"_value":3.0,"_name":"speed","_id":"7abf7130-4b87-4c4e-a111-85b9f2134027","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"bunny":{"_name":"bunny","_id":"38117234-d638-44aa-9d46-7ad1a9a41f8e","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"rested":{"_name":"rested","_id":"eda72586-648b-44a7-bc22-9950950673fb","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"drink?":{"_value":100.0,"_name":"drink?","_id":"06518710-a736-478e-b2cf-33b6098c1b06","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"drink?":{"_name":"drink?","_id":"06518710-a736-478e-b2cf-33b6098c1b06","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"water":{"_value":1,"_name":"water","_id":"36424cee-17b9-459a-9940-1f63dd0acba2","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"wolf":{"_value":2,"_name":"wolf","_id":"d010c17d-8cf4-4a81-b29b-a2ef991d279c","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"thirst":{"_value":100.0,"_name":"thirst","_id":"eeaf4552-a86e-4d8f-b918-1e26af7f4227","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences:
   - {fileID: 0}
   - {fileID: 1632083562}
+  - {fileID: 2141491190}
   _serializedVariables:
   - _json: '{"_value":3.0,"_name":"speed","_id":"7abf7130-4b87-4c4e-a111-85b9f2134027","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
@@ -1730,7 +1765,7 @@ MonoBehaviour:
   - _json: '{"_name":"rested","_id":"eda72586-648b-44a7-bc22-9950950673fb","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
-  - _json: '{"_value":100.0,"_name":"drink?","_id":"06518710-a736-478e-b2cf-33b6098c1b06","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+  - _json: '{"_name":"drink?","_id":"06518710-a736-478e-b2cf-33b6098c1b06","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
   - _json: '{"_value":1,"_name":"water","_id":"36424cee-17b9-459a-9940-1f63dd0acba2","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
@@ -1738,6 +1773,14 @@ MonoBehaviour:
     _references:
     - {fileID: 0}
     - {fileID: 1632083562}
+  - _json: '{"_value":1,"_name":"wolf","_id":"d010c17d-8cf4-4a81-b29b-a2ef991d279c","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 2141491190}
+  - _json: '{"_value":100.0,"_name":"thirst","_id":"eeaf4552-a86e-4d8f-b918-1e26af7f4227","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
 --- !u!114 &2141491192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1752,19 +1795,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
   _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"otherObject":{"_value":1},"varName":"rested","newValue":1.0,"$type":"NodeCanvas.Tasks.Actions.SetValueAT"},{"animationTrigger":"Next","animationIndex":"AnimIndex","animationState":1,"$type":"NodeCanvas.Tasks.Actions.AnimationAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Rest","_position":{"x":388.7068,"y":44.60146},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"actions":[{"otherObject":{"_value":1},"varName":"speed","newValue":3.0,"$type":"NodeCanvas.Tasks.Actions.SetValueAT"},{"animationTrigger":"Next","animationIndex":"AnimIndex","animationState":2,"prereqState":"sit
-    up","$type":"NodeCanvas.Tasks.Actions.AnimationAT"},{"sampleMaxDist":{"_value":2.0},"$type":"NodeCanvas.Tasks.Actions.WanderAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Wander","_position":{"x":799.7744,"y":269.4323},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_nestedFSM":{"_value":2},"_name":"Pursuit","_position":{"x":971.0014,"y":-55.47884},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"otherObject":{"_value":1},"varName":"rested","$type":"NodeCanvas.Tasks.Actions.SetValueAT"},{"audio":3,"clip":4,"$type":"NodeCanvas.Tasks.Actions.PlaySoundAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Howl","_position":{"x":630.3177,"y":-149.026},"$type":"NodeCanvas.StateMachines.ActionState","$id":"3"},{"_actionList":{"executionMode":1,"actions":[{"speed":{"_name":"speed","_targetVariableID":"7abf7130-4b87-4c4e-a111-85b9f2134027"},"targetTransform":{"_name":"water","_targetVariableID":"36424cee-17b9-459a-9940-1f63dd0acba2"},"$type":"NodeCanvas.Tasks.Actions.ApproachAT"},{"currentValue":{"_name":"drink?","_targetVariableID":"06518710-a736-478e-b2cf-33b6098c1b06"},"variableName":"drink?","value":10.0,"$type":"NodeCanvas.Tasks.Actions.IncreaseValueAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Drink","_position":{"x":437.874,"y":343.9195},"$type":"NodeCanvas.StateMachines.ActionState","$id":"4"},{"_conditionList":{"conditions":[]},"_actionList":{"actions":[{"rate":5.0,"currentValue":{"_name":"drink?","_targetVariableID":"06518710-a736-478e-b2cf-33b6098c1b06"},"$type":"NodeCanvas.Tasks.Actions.DecreaseValueAT"}]},"_position":{"x":869.9258,"y":-215.0094},"$type":"NodeCanvas.StateMachines.OnFSMUpdate"}],"connections":[{"_condition":{"waitDuration":5.0,"$type":"NodeCanvas.Tasks.Conditions.WaitCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"currentValue":{"_name":"drink?","_targetVariableID":"06518710-a736-478e-b2cf-33b6098c1b06"},"threshold":1.0,"$type":"NodeCanvas.Tasks.Conditions.UnderValueCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"detectionRadius":{"_value":12.0},"targetTag":{"_value":"Bunny"},"storeNearest":true,"nearestTarget":{"_name":"bunny","_targetVariableID":"38117234-d638-44aa-9d46-7ad1a9a41f8e"},"$type":"NodeCanvas.Tasks.Conditions.IsCloseCT"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"conditions":[{"waitDuration":12.0,"$type":"NodeCanvas.Tasks.Conditions.WaitCT"},{"currentValue":{"_name":"rested","_targetVariableID":"eda72586-648b-44a7-bc22-9950950673fb"},"threshold":0.99,"$type":"NodeCanvas.Tasks.Conditions.OverValueCT"}],"$type":"NodeCanvas.Framework.ConditionList"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"waitDuration":14.0,"$type":"NodeCanvas.Tasks.Conditions.WaitCT"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"currentValue":{"_name":"drink?","_targetVariableID":"06518710-a736-478e-b2cf-33b6098c1b06"},"threshold":1.0,"$type":"NodeCanvas.Tasks.Conditions.UnderValueCT"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+    up","$type":"NodeCanvas.Tasks.Actions.AnimationAT"},{"sampleMaxDist":{"_value":2.0},"$type":"NodeCanvas.Tasks.Actions.WanderAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Wander","_position":{"x":809.8558,"y":283.8343},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_nestedFSM":{"_value":2},"_name":"Pursuit","_position":{"x":969.5613,"y":-51.15824},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"otherObject":{"_value":1},"varName":"rested","$type":"NodeCanvas.Tasks.Actions.SetValueAT"},{"audio":3,"clip":4,"$type":"NodeCanvas.Tasks.Actions.PlaySoundAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Howl","_position":{"x":630.3177,"y":-149.026},"$type":"NodeCanvas.StateMachines.ActionState","$id":"3"},{"_nestedFSM":{"_value":5},"_name":"Drink","_position":{"x":544.4435,"y":368.7961},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"4"},{"_conditionList":{"conditions":[{"currentValue":{"_name":"drink?","_targetVariableID":"06518710-a736-478e-b2cf-33b6098c1b06"},"threshold":0.99,"$type":"NodeCanvas.Tasks.Conditions.UnderValueCT"}]},"_actionList":{"actions":[{"otherObject":{"_name":"wolf","_targetVariableID":"d010c17d-8cf4-4a81-b29b-a2ef991d279c"},"rateOfChange":3.0,"variable":{"_name":"thirst","_targetVariableID":"eeaf4552-a86e-4d8f-b918-1e26af7f4227"},"$type":"NodeCanvas.Tasks.Actions.DecreaseValueAT"}]},"_position":{"x":841.8258,"y":-211.0578},"$type":"NodeCanvas.StateMachines.OnFSMUpdate"}],"connections":[{"_condition":{"waitDuration":5.0,"$type":"NodeCanvas.Tasks.Conditions.WaitCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"currentValue":{"_name":"thirst","_targetVariableID":"eeaf4552-a86e-4d8f-b918-1e26af7f4227"},"threshold":0.1,"$type":"NodeCanvas.Tasks.Conditions.UnderValueCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"detectionRadius":{"_value":12.0},"targetTag":{"_value":"Bunny"},"storeNearest":true,"nearestTarget":{"_name":"bunny","_targetVariableID":"38117234-d638-44aa-9d46-7ad1a9a41f8e"},"$type":"NodeCanvas.Tasks.Conditions.IsCloseCT"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"conditions":[{"waitDuration":12.0,"$type":"NodeCanvas.Tasks.Conditions.WaitCT"},{"currentValue":{"_name":"rested","_targetVariableID":"eda72586-648b-44a7-bc22-9950950673fb"},"threshold":0.99,"$type":"NodeCanvas.Tasks.Conditions.OverValueCT"}],"$type":"NodeCanvas.Framework.ConditionList"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"waitDuration":14.0,"$type":"NodeCanvas.Tasks.Conditions.WaitCT"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"currentValue":{"_name":"thirst","_targetVariableID":"eeaf4552-a86e-4d8f-b918-1e26af7f4227"},"threshold":0.1,"$type":"NodeCanvas.Tasks.Conditions.UnderValueCT"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"waitDuration":5.0,"$type":"NodeCanvas.Tasks.Conditions.WaitCT"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 2141491190}
   - {fileID: 11400000, guid: 6b58fd2896f675e4f8e61f6a5ca6b191, type: 2}
   - {fileID: 666227352}
   - {fileID: 8300000, guid: 437363f2ded2c2247a66257bb9c8b3d3, type: 3}
+  - {fileID: 11400000, guid: e34543daed8d1144790d111f0479e444, type: 2}
   _boundGraphSource:
     _version: 3.33
     _category: 
     _comments: 
-    _translation: {x: -221.63608, y: 150.62743}
-    _zoomFactor: 0.69434774
+    _translation: {x: -108.78584, y: 160.37784}
+    _zoomFactor: 0.66680187
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0

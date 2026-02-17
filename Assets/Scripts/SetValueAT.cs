@@ -24,7 +24,7 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
 
-            Blackboard otherBlackboard = agent.GetComponent<Blackboard>(); //gets blackboard
+            Blackboard otherBlackboard = otherObject.value.GetComponent<Blackboard>(); //gets blackboard
             otherBlackboard.SetVariableValue(varName, newValue); //sets the variable in the blackboard to the new value
             Debug.Log(otherBlackboard.GetVariableValue<float>(varName)); //debug log test to see if it is set to the new value
 

@@ -24,15 +24,16 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Return null if init was successfull. Return an error string otherwise
 		protected override string OnInit(){
 
-			targets = GameObject.FindGameObjectsWithTag(targetTag.value);
+			
 
 			return null;
 		}
 
 		//Called whenever the condition gets enabled.
 		protected override void OnEnable() {
-			
-		}
+
+            targets = GameObject.FindGameObjectsWithTag(targetTag.value); //find the object with the tag(s)
+        }
 
 		//Called whenever the condition gets disabled.
 		protected override void OnDisable() {
@@ -43,11 +44,11 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
 
-            foreach (GameObject target in targets)
+            foreach (GameObject target in targets) //loop through all potential targets
 			{
-                float distance = Vector3.Distance(agent.transform.position, target.transform.position);
+                float distance = Vector3.Distance(agent.transform.position, target.transform.position); //get the distance between the agent and the target
 
-                if (distance <= detectionRadius.value)
+                if (distance <= detectionRadius.value) //check if target is within the set radius
                 {
                     Blackboard otherBlackboard = agent.GetComponent<Blackboard>(); //gets blackboard
                     otherBlackboard.SetVariableValue(nearestTarget.name, target); //sets the variable in the blackboard to the new value
